@@ -3,13 +3,13 @@ const ejsMate = require("ejs-mate");
 const methodOverride = require("method-override");
 const path = require("path");
 const session = require('express-session');
-const ExpressError = require("./ExpressError.js");
+const ExpressError = require("../ExpressError.js");
 const flash = require("connect-flash");
 const MongoStore = require("connect-mongo");
 const passport = require("passport");
 const bodyParser = require('body-parser');
 const LocalStrategy = require("passport-local").Strategy;
-const User = require("./models/user.js");
+const User = require("../models/user.js");
 const cors = require('cors');
 
 const PORT = process.env.PORT || 8080;
@@ -18,19 +18,19 @@ const app = express();
 app.use(bodyParser.json());
 
 require("dotenv").config();
-require("./models/db.js");
+require("../models/db.js");
 
 //mysql
-require('./mysql/db');
+require('../mysql/db.js');
 
 
-const authRouter = require("./routes/authRouter.js");
-const hostRouter = require("./routes/hostRouter.js");
-const addressRouter=require('./routes/addressRouter.js');
-const FloorPlanRouter=require('./routes/FloorPlanRouter.js');
-const blogRouter = require("./routes/blogRouter.js");
-const offerRoute = require("./routes/offerRouter.js");
-const searchRouter = require("./routes/searchformRouter.js");
+const authRouter = require("../routes/authRouter.js");
+const hostRouter = require("../routes/hostRouter.js");
+const addressRouter=require('../routes/addressRouter.js');
+const FloorPlanRouter=require('../routes/FloorPlanRouter.js');
+const blogRouter = require("../routes/blogRouter.js");
+const offerRoute = require("../routes/offerRouter.js");
+const searchRouter = require("../routes/searchformRouter.js");
 
 
 app.set("view engine", "ejs");
@@ -225,3 +225,5 @@ app.listen(PORT, '0.0.0.0', (err) => {
     }
     console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = app;
