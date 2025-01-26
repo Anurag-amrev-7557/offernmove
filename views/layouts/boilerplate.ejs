@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="<%= googleClientId %>.apps.googleusercontent.com">
+    <link rel="icon" type="image/png" href="/resources/logo-title.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/faqs.css">
+    <link rel="stylesheet" href="/css/terms.css">
+    <link rel="stylesheet" href="/css/policy.css">
+    <link rel="stylesheet" href="/css/refund.css">
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/offer/offer1.css">
+    <meta name="format-detection" content="telephone=no">
+    <title>OfferNMove – Direction to your home</title>
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.4.0/dist/duet/duet.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.4.0/dist/duet/duet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.4.0/dist/duet/themes/default.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapKey %>&libraries=places,drawing,marker,geocoding&async=defer"></script>
+</head>
+<style>
+    .enquiry-background {
+        background-image: url("/resources/resort.jpg");
+        background-size: cover;
+    }
+</style>
+<body>
+    <div class="back-to-top animate__animated">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+    <%- include("../includes/navbar.ejs") %>
+    <div class="container">
+        <%- body %>
+    </div>
+    <%- include("../includes/footer.ejs") %>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script src="/models/login-model.js"></script>
+    <script src="/models/signup-model.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/models/landing-testing.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/hosting.js"></script>
+    <script src="/js/offer.js"></script>
+</body>
+</html> 
+

@@ -1,0 +1,321 @@
+<% layout("/layouts/boilerplate") %>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Search Service</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+           
+            background-color: #f8f8f8;
+        }
+
+        .hero-section {
+            height: 30rem;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            background: url('/real-estate/images/HHeader.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: flex-start; /* Align content to the left */
+            align-items: center; /* Vertically center content */
+            position: relative;
+            padding-left: 60px; /* Add padding for space on the left */
+        }
+
+        .hero-content {
+            text-align: left; /* Ensure left alignment */
+            color: black;
+            max-width: 500px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0 0 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin: 0 0 30px;
+        }
+
+        
+
+        .content-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .image-cards {
+            display: flex;
+            gap: 20px;
+        }
+
+        .image-card {
+            background: #ffffff;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-card img {
+            width: 300px;
+            height: 500px;
+            margin-bottom: 15px;
+        }
+
+        .image-card h3 {
+            font-size: 1rem;
+            color: #333;
+            margin: 0 0 10px;
+        }
+
+        .image-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .text-section {
+            max-width: 400px;
+        }
+
+        .text-section h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .text-section p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .filter-card {
+            width: 300px;
+            height: 450px;
+            background: #ffffff;
+            border-radius: 10px;
+           
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .filter-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .filter-card img {
+            width: 300px;
+            height: 330px;
+            margin-bottom: 15px;
+        }
+
+        .filter-card h3 {
+            font-size: 1rem;
+            color: #333;
+            margin: 0 0 10px;
+        }
+
+        .filter-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .search-container {
+            position: static;
+        }
+        /* .search-bar {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            background-color: #6ba4e1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+        .search-bar-container {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .custom-search-bar {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+    
+        .search-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .search-item label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+    
+        .search-item select {
+            width: 150px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 1rem;
+            background-color: #fff;
+            appearance: none;
+        }
+    
+        .custom-search-bar button {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+    
+        .custom-search-bar button:hover {
+            background: linear-gradient(90deg, #0056b3, #003f87);
+        } */
+
+
+
+
+    </style>
+</head>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 style="font-size: 4.2rem;
+            font-weight: bold;
+            margin: 0;
+            text-align: left;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            max-width: 600px;">Find Your Perfect Home – Effortlessly!</h1>
+            
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Search</button>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="top-section">
+            <div class="image-cards">
+                <div class="image-card">
+                    <img src="/real-estate/images/HLeft.jpeg" alt="Amenities">
+          
+                </div>
+                <div class="image-card">
+                    <img src="/real-estate/images/HRight.jpeg" alt="Neighborhood">
+                    
+                </div>
+            </div>
+            <div class="text-section">
+                <h2>Your One-Stop Solution for Property Needs</h2>
+                <p>
+                    Looking for the perfect property to call home? Whether you&#39;re searching for a rental, planning to
+                    buy your dream home, or listing your property for sale, our platform simplifies the process.
+                </p>
+                <p>With an extensive network of property owners, we connect you to the best options tailored to your
+                    preferences. Let us help you find the ideal space while also assisting with additional services like
+                    home interiors, repairs, and shifting.</p>
+            </div>
+        </div>
+
+        <div class="filters">
+            <div class="filter-card">
+                <img src="/real-estate/images/ser.jpeg" alt="Location">
+                <h3>Location</h3>
+                <p>Narrow down your options with properties available in prime areas.</p>
+            </div>
+
+            <div class="filter-card">
+                <img src="/real-estate/images/ser2.jpeg" alt="Property">
+                <h3>Property</h3>
+                <p>From apartments to villas, find the property that suits your lifestyle.</p>
+            </div>
+
+            <div class="filter-card">
+                <img src="/real-estate/images/ser3.jpeg" alt="Price Range">
+                <h3>Price Range</h3>
+                <p>Set your budget and explore a wide range of affordable options.</p>
+            </div>
+
+            <div class="filter-card">
+                <img src="/real-estate/images/ser4.jpeg" alt="Property Type">
+                <h3>PG and Co-Living Made Easy</h3>
+                <p>Find properties tailored to your lifestyle with must-have amenities like parking, balconies, and pools.</p>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <form action="/search-results" method="GET" class="search-form">
+                <div class="search-input-container">
+                    <input type="text" placeholder="Looking for 2BHK house in Bangalore...." class="search-input" id="search-query" name="search-query">
+                    <div class="search">
+                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Search</button>
+                    </div>
+                </div>
+            </form>
+            <div class="autocomplete-container">
+                <ul>
+                    <li>Looking for something</li>
+                    <li>Looking for something</li>
+                    <li>Looking for something</li>
+                    <li>Looking for something</li>
+                    <li>Looking for something</li>
+                    <li>Looking for something</li>
+                </ul>
+            </div>
+        </div>
+    </div>

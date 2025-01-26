@@ -1,0 +1,288 @@
+<% layout("/layouts/boilerplate") %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Repairs Mockup</title>
+    <style>
+        /* Body and general styles */
+        body {
+            margin: 0;
+        
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+        }
+
+        /* Hero Section */
+        .hero2 {
+            position: relative;
+            background: url(/real-estate/images/repairmain.jpeg) no-repeat center center / cover;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: #f8f8f8;
+            text-align: left;
+            height: 30rem;
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .hero2 .content {
+            text-align: left;
+            scale: 0.75;
+        }
+
+        .hero2 h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero2 button:hover {
+            background-color: #555;
+        }
+
+        .below-hero-heading {
+            text-align: left;
+            font-size: 2.4rem;
+            color: #333;
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            font-weight: 500;
+            margin: 40px;
+            padding-left: 180px; /* Align with the left image */
+        }
+
+        /* Tools and Services Section */
+        .tools-services {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+        }
+
+        /* Tools Section */
+        .tools {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            background-color: #f8f8f8;
+            color: black;
+            height: 1380px;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .tools img {
+            width: 500px;
+            height: 700px;
+            margin-left: 170px;
+        }
+
+        .tools .text {
+            color: black;
+            font-size: 2.5rem;
+            font-weight: bold;
+            padding-left: 9rem;
+            margin-top: 70px;
+        }
+
+        .tools .text2 {
+            padding-left: 11rem;
+            font-size: 1.3rem;
+            text-align: left;
+        }
+
+        /* Services Section */
+        .services {
+            width: 50%;
+            height: auto;
+            background-color: #f8f8f8;
+        }
+
+        .services .text {
+            color: black;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-top: 30px;
+        }
+
+        .services .text2 {
+            padding-left: 80px;
+            padding-right: 80px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        /* Button styling */
+        .cta-button {
+            display: flex; /* Enables flexbox */
+            justify-content: center; /* Centers text horizontally */
+            align-items: center; /* Centers text vertically */
+            border-radius: 3rem;
+            border: none;
+            font-size: 0.8rem;
+            color: #F3F4F6;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25), transparent) #115DFC;
+            height: 2.825rem;
+            padding: 0.4rem 2.5rem;
+            cursor: pointer;
+            font-weight: 520;
+            letter-spacing: 0.25px;
+            transition: all 0.3s ease-out;
+            position: relative;
+            margin-top: 20px; /* Adjust top margin as needed */
+            margin-left: 250px;
+        }
+
+        .cta-button:hover {
+            scale: 1.025;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Service Cards Layout */
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 0px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Service Card Styles */
+        .services .service-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            width: 270px;
+            height: 420px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        .services .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Service Card Image */
+        .services .service-card img {
+            width: 100%;
+            height: 60%; /* Shrink the image height */
+            object-fit: cover; /* Ensure image covers the top part of the card */
+        }
+
+        /* Service Card Description */
+        .services .service-card .description {
+            background-color: #fff;
+            color: black;
+            padding: 10px;
+            font-size: 1.1rem;
+            font-weight: normal;
+            width: 100%;
+            text-align: center;
+            height: 20%; /* Allocate space for description */
+        }
+        .center-text-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px; /* Adjust height as needed */
+            background-color: #f8f8f8;
+            text-align: center;
+            margin-top: -75px;
+        }
+
+        .center-text-section p {
+            font-size: 1.8rem;
+            color: #333;
+            max-width: 1000px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero2">
+        <div class="content">
+            <h1 style="font-size: 4.8rem; font-weight: bold; margin: 0; text-align: left; color: white; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; max-width: 600px;">Find Trusted Home Repair Experts</h1>
+        </div>
+    </section>
+    <div class="below-hero-heading">
+       Connecting you with certified professionals for all your repair needs, hassle-free.
+    </div>
+
+    <!-- Tools and Services Section (Flexbox Layout) -->
+    <section class="tools-services">
+        <!-- Tools Section -->
+        <div class="tools">
+            <img src="/real-estate/images/tools.jpg" alt="Tools">
+            <div class="text">Equipped for Excellence:</div>
+            <p class="text2">All partners are armed with professional-grade tools, ensuring safety and quality in every repair job.</p>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services">
+            <div class="text">We Offer a Variety of Home Repair Services</div>
+            <p class="text2">From plumbing to electrical repairs, we ensure quality service to maintain the integrity of your home. Get in touch today for expert solutions to your home repair needs.</p>
+            <button class="cta-button">Search</button>
+
+            <!-- Service Cards -->
+            <div class="service-cards">
+                <div class="service-card" style="background-image: url('/real-estate/images/plumbing.jpg');">
+                    <img src="/real-estate/images/plumbing.jpg" alt="Plumbing">
+                    <div class="description">
+                        <h3>Plumbing Repair</h3>
+                        <!-- <p>Fixing leaks, clogs, and pipe repairs with professional tools and expertise.</p> -->
+                    </div>
+                </div>
+                <div class="service-card" style="background-image: url('/real-estate/images/Electric.jpg');">
+                    <img src="/real-estate/images/Electric.jpg" alt="Electrical Services">
+                    <div class="description">
+                        <h3>Electrical Services</h3>
+                        <!-- <p>Our licensed electricians handle installations, rewiring, and electrical repairs.</p> -->
+                    </div>
+                </div>
+                <div class="service-card" style="background-image: url('/real-estate/images/Carpenter.jpg');">
+                    <img src="/real-estate/images/Carpenter.jpg" alt="Carpentry">
+                    <div class="description">
+                        <h3>Carpentry</h3>
+                        <!-- <p>Expert carpenters for custom furniture, repairs, and installations.</p> -->
+                    </div>
+                </div>
+                <div class="service-card" style="background-image: url('/real-estate/images/painting.jpg');">
+                    <img src="/real-estate/images/painting.jpg" alt="Interior Painting">
+                    <div class="description">
+                        <h3>Interior Painting</h3>
+                        <!-- <p>Get a fresh look with our professional painting services for your home.</p> -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <div class="center-text-section" style="height: auto;">
+        <p>
+            Quick and Reliable Repair Solutions at Your Fingertips<br><br>
+            Share your repair needs and location through a simple form, and we’ll take care of the rest. If no immediate match is available, your request is promptly shared with our network of trusted partners. Once a partner is ready to assist, they’ll contact you directly to finalize the details and get started.<br><br>
+            Effortlessly connect with skilled professionals who are equipped to handle your repair needs.<br><br>
+            Trusted solutions are just a click away!
+        </p>
+    </div>
+    
+
+</body>
+</html>

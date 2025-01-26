@@ -1,0 +1,81 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="contact-container">
+  <div class="contact-form-container">
+    <div class="contact-form-heading">
+      <h2>Contact Us</h2>
+      <h3>We'd Love to Hear From You!</h3>
+      <p>At OfferNMove, we value your experience. Whether you have account questions, need help, or want to share feedback, we’re here to assist. Reach out
+        anytime—no question is too small, and we’re always ready to listen. Your input helps us improve, so connect with us today!</p>
+    </div>
+
+    <form action="/submitContact" method="POST" class="contact-form">
+      <div class="contact-input-group">
+          <label for="firstName">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+      </div>
+
+      <div class="contact-input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+      </div>
+
+      <div class="contact-input-group">
+        <label for="phone">Phone</label>
+        <input type="phone" id="phone" name="phone" placeholder="Enter your Phone" required>
+      </div>
+
+      <div class="contact-input-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Enter your message" rows="5" required></textarea>
+      </div>
+
+      <div class="agreement-check" id="contact-agreement">
+        <label class="checkbox-container">
+            <input class="custom-checkbox" type="checkbox" id="agreement">
+            <span class="checkmark"></span>
+        </label>
+        <label for="agreement">By using the website, you accept the <a href="/terms" id="termsconditions">Terms and Conditions</a></label>
+      </div>
+
+      <div class="contact-submit-button-container">
+        <button type="submit" class="contact-submit-btn">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="contact-info">
+    <div>
+      <img src="/resources/logo.png" alt="">
+    </div>
+    <div class="contact-person">
+      <div class="email">
+        <i class="fa-solid fa-envelope"></i>
+        <p>offernmove@gmail.com</p>
+      </div>
+      <div class="location">
+        <i class="fa-solid fa-map-marker-alt"></i>
+        <p>WorkFlo Ranka JCT, No 224, 3rd Floor, Old Madras Rd, KR Puram, Bangalore 560016</p>
+      </div>
+    </div>
+
+    <p id="follow">Follow Us</p>
+    <div class="contact-icon-container">
+      <a href="https://www.linkedin.com/company/offernmove" target="_blank" rel="noopener noreferrer" class="footer-icon" id="linkedin">
+          <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.instagram.com/offernmove/" target="_blank" rel="noopener noreferrer" class="footer-icon" id="insta">
+          <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@OfferNMove" target="_blank" rel="noopener noreferrer" class="footer-icon" id="youtube">
+          <i class="fa-brands fa-youtube"></i>
+      </a>
+      <a href="https://whatsapp.com/channel/0029VawB0pQ4CrfeHWEiP127" target="_blank" rel="noopener noreferrer" class="footer-icon" id="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <a href="https://in.pinterest.com/offernmove/_created/" target="_blank" rel="noopener noreferrer" class="footer-icon" id="pinterest">
+        <i class="fa-brands fa-pinterest"></i>
+    </a>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+.faqs-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #F3F4F6;
+    padding: 0rem 6rem;
+    margin-bottom: 11rem;
+}
+
+.faqs-container h2 {
+    font-size: 1.55rem;
+    font-weight: 570;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.faq-heading {
+    font-size: 1rem;
+    font-weight: 530;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    background-color: #ededed;
+    padding: 0.9rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding-left: 1.5rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease, border 0.0000001s ease;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px 0px;
+
+    b {
+        font-weight: 530;
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 0.95rem;
+    }
+}
+
+.faq-heading:hover {
+    background-color: #e3e3e3;
+}
+
+.faq-content {
+    font-size: 0.95rem;
+    color: rgba(0, 0, 0, 0.8);
+    max-height: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: none;
+    background-color: #ededed;
+    overflow: hidden;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+
+    a {
+        color: #115dfc;
+    }
+}
+
+.faq-content b {
+    font-weight: 530;
+}
+
+.faq.open .faq-content {
+    max-height: 500px;
+    opacity: 1;
+}

@@ -1,0 +1,253 @@
+.blog-hero-container {
+    display: flex;
+    background-color: rgba(17, 93, 252, 0.08);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding: 2.5rem 7rem;
+    justify-content: start;
+    margin-bottom: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    
+    h1 {
+        width: 60%;
+        font-size: 2.8rem;
+        font-weight: 530;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 450;
+        margin: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    button {
+        padding: 0.68rem 1.2rem;
+        font-weight: 540;
+        font-size: 0.9rem;
+        outline: none;
+        border: none;
+        border-radius: 3rem;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25), transparent) #115DFC;
+        color: #F3F4F6;
+        cursor: pointer;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.content-img-wrapper {
+    img {
+        position: absolute;
+        top: 5.4rem;
+        right: 8rem;
+        height: 25rem;
+        width: 25rem;
+        transform: scale(1.1);
+        z-index: -10;
+    }
+}
+
+.newsletter-wrapper {
+    display: flex;
+    padding: 4rem;
+    justify-content: center;
+
+    .newsletter {
+        display: flex;
+        padding: 2rem;
+        width: 80%;
+        justify-content: space-between;
+        border-radius: 1.5rem;
+        border: 1px solid rgba(0,0,0,0.1);
+        background-color: #EBEDFB;
+        transform: scale(0.95);
+
+        .newsletter-heading {
+            h2 {
+                font-size: 1.35rem;
+                font-weight: 500;
+                margin: 0;
+                color: rgba(0,0,0,0.9);
+            }
+
+            h1 {
+                font-size: 1rem;
+                font-weight: 450;
+                color: rgba(0,0,0,0.7);
+                margin: 0;
+            }
+        }
+
+        .newsletter-inputbox {
+            display: flex;
+            gap: 1rem;
+
+            input {
+                padding: 0 1rem;
+                border-radius: 3rem;
+                outline: none;
+                width: 25rem;
+                border: 1px solid rgba(0,0,0,0.2);
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 0 2rem;
+                border-radius: 3rem;
+                outline: none;
+                border: none;
+                background: linear-gradient(to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25), transparent) #115DFC;
+                color: #F3F4F6;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.blog-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    padding: 5rem;
+
+    .blog-item {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 1rem;
+        background-color: #F3F4F6;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px;
+        transition: all 0.2s ease;
+
+        .blog-image {
+            padding: 7rem;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            background-image: url("/resources/blog-first-house.jpeg");
+            background-size: cover; 
+            background-position: center;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 8px;
+            transition: all 0.2s ease;
+        }
+
+        .blog-heading {
+            padding: 1rem;
+            margin-top: 1rem;
+
+            h2 {
+                font-weight: 500;
+                font-size: 1.2rem;
+                margin: 0;
+                color: rgba(0,0,0,0.9);
+            }
+        }
+
+        .blog-content {
+            padding: 1rem;
+            padding-top: 0;
+            font-size: 0.9rem;
+            color: rgba(0,0,0,0.7);
+            margin-bottom: 2rem;
+        }
+    }
+
+    .blog-item:hover {
+        background-color: rgba(201, 201, 201, 0.18);
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 15px;
+    }
+
+    .blog-item:hover .blog-image {
+        box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+    }
+
+    .blog-item:hover .blog-slider {
+        width: 25%;
+    }
+}
+
+#blog-image5 {
+    background-image: url("/resources/blog-renting-house.jpeg");
+    background-size: cover; 
+    background-position: 0% 22%;
+}
+
+#blog-image4 {
+    background-image: url("/resources/blog-coliving.jpeg");
+    background-size: cover; 
+    background-position: 0% 10%;
+}
+
+#blog-image3 {
+    background-image: url("/resources/blog-scam.jpg");
+    background-size: cover; 
+    background-position: 0% 15%;
+}
+
+#blog-image2 {
+    background-image: url("/resources/blog-agent.jpg");
+    background-size: cover; 
+    background-position: -20% 15%;
+}
+
+.blog-slider {
+    height: 1px;
+    width: 20%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25), transparent) #115DFC;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+}
+
+.blog-article-wrapper {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    .blog-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        border: 1px solid rgba(0,0,0,0.1);
+        padding: 4rem;
+        padding-top: 3rem;
+        border-radius: 1rem;
+
+        .blog-image-container {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 15rem 45%;
+            background-image: url("/resources/blog-first-house.jpeg");
+            background-size: cover;
+            background-position: 0% 45%;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .blog-heading-container {
+            font-size: 1.4rem;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 550;
+            color: rgba(0,0,0,0.7);
+            margin-bottom: 2rem;
+        }
+
+        .blog-description {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: rgba(0,0,0,0.7);
+
+            b {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: rgba(0,0,0,0.9);
+            }
+        }
+    }
+}

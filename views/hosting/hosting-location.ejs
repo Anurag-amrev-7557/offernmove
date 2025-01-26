@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/resources/logo-title.png">
+        <link rel="stylesheet" href="/css/hosting.css">
+        <meta name="format-detection" content="telephone=no">
+        <title>OfferNMove – Direction to your home</title>
+        <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    </head>
+<body>
+    <header class="hosting-header">
+        <a href="/"><img src="/resources/logo-title.png"></a>
+        <div class="return"><a href="/host/home/about-place"><span class="material-symbols-outlined">arrow_back</span><span class="tooltip return-tooltip">Back</span></a></div>
+    </header>
+
+    <div class="hosting-location-container">
+        <div class="hosting-location-heading-container" data-aos="zoom-in">
+            <h2>Confirm your address</h2>
+            <p>Your address is only shared with guests after they've made a reservation.</p>
+        </div>
+        <div class="hosting-location-input-container">
+            <div class="inputGroup" data-aos="zoom-in" data-aos-delay="50">
+                <input type="text" id="flat" required="" title="Flat, house, etc" autocomplete="off" style="border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
+                <label for="flat">Flat, house, etc (if applicable)</label>
+            </div>
+            <div class="inputGroup" data-aos="zoom-in" data-aos-delay="100">
+                <input id="street"  type="text" required="" title="Street address" autocomplete="off">
+                <label for="street">Street address</label>
+            </div>
+            <div class="inputGroup" data-aos="zoom-in" data-aos-delay="150">
+                <input id="landmark" type="text" required="" title="Landmark" autocomplete="off">
+                <label for="landmark">Nearby landmark (if applicable)</label>
+            </div>
+            <div class="inputGroup" data-aos="zoom-in" data-aos-delay="200">
+                <input id="district"  type="text" required="" title="District/locality" autocomplete="off">
+                <label for="district">District/locality (if applicable)</label>
+            </div>
+
+            <div class="dropdown" id="state-list" data-aos="zoom-in" data-aos-delay="250">
+                <div class="dropdown-input-wrapper">
+                    <input
+                        type="text"
+                        id="state-select"
+                        class="dropdown-input"
+                        placeholder="Select a State"
+                    />
+                    <!-- Chevron icon inside the input box -->
+                    <div class="chevron-icon">
+                        <svg viewBox="0 0 360 360" xml:space="preserve">
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    id="XMLID_225_"
+                                    d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                ></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-list state-list">
+                    <input
+                        type="text"
+                        class="search-box"
+                        placeholder="Search State..."
+                        oninput="filterList(this, 'state-list')"
+                    />
+                    <ul id="state-options"></ul>
+                </div>
+            </div>
+             
+            <div class="dropdown city-select" data-aos="zoom-in" data-aos-delay="300">
+                <div class="dropdown-input-wrapper">
+                    <input
+                        type="text"
+                        id="city-select"
+                        class="dropdown-input"
+                        placeholder="Select a City"
+                        readonly
+                    />
+                    <div class="chevron-icon">
+                        <svg viewBox="0 0 360 360" xml:space="preserve">
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    id="XMLID_225_"
+                                    d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                ></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-list city-list">
+                    <input
+                        type="text"
+                        class="search-box"
+                        placeholder="Search City..."
+                        oninput="filterList(this, 'city-list')"
+                    />
+                    <ul id="city-options"></ul>
+                </div>
+            </div>
+
+            <div class="inputGroup" data-aos="zoom-in" data-aos-delay="350">
+                <input id="pin" type="text" required="" title="PIN code" autocomplete="off" style="border-bottom-left-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom: 1px solid rgba(0, 0, 0, 0.3);">
+                <label for="pin">PIN code</label>
+            </div>
+        </div>
+        <div class="hosting-location-map-container">
+            <div class="hosting-location-map-heading" data-aos="zoom-in" data-aos-delay="400">
+                <h3>Show your specific location</h3>
+                <p>Make it clear to guests where your place is located. We'll only share your address after they've made a reservation. Learn more</p>
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+    
+    <footer>
+        <a href="/host/home/floor-plan">
+            <button class="btn-class-name hosting-start-btn animate__animated animate__zoomIn">
+                <span>Next</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                    <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z">
+                    </path>
+                </svg>
+                <span class="tooltip">Next</span>
+            </button>
+        </a>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script>
+        //city and states list 
+        const headers = new Headers();
+        headers.append("X-CSCAPI-KEY", "TzFsYmJUODc5UGk2ZlpXTW94ZmpHUkg0N0VNQWV6Rnplb2pjME8yYw==");
+
+        const requestOptions = {
+            method: 'GET',
+            headers: headers,
+            redirect: 'follow'
+        };
+
+        const stateOptions = document.getElementById("state-options");
+        const cityOptions = document.getElementById("city-options");
+
+        // Fetch states and populate the states dropdown
+        fetch("https://api.countrystatecity.in/v1/countries/IN/states", requestOptions)
+        .then(response => response.json())
+        .then(states => {
+            // Sort states alphabetically by name
+            states.sort((a, b) => a.name.localeCompare(b.name));
+
+            states.forEach(state => {
+            const li = document.createElement("li");
+            li.textContent = state.name;
+            li.dataset.stateCode = state.iso2; 
+                li.addEventListener("click", () => {
+                    document.getElementById("state-select").value = state.name;
+                    loadCities(state.iso2);
+                    stateOptions.parentElement.style.display = "none";
+                    appearcity();
+                    showlist();
+                });
+            stateOptions.appendChild(li);
+            });
+        })
+        .catch(error => console.log("Error fetching states:", error));
+
+
+        function loadCities(stateCode) {
+        cityOptions.innerHTML = "";
+        fetch(`https://api.countrystatecity.in/v1/countries/IN/states/${stateCode}/cities`, requestOptions)
+            .then(response => response.json())
+            .then(cities => {
+                cities.forEach(city => {
+                    const li = document.createElement("li");
+                    li.textContent = city.name;
+                        li.addEventListener("click", () => {
+                        document.getElementById("city-select").value = city.name;
+                        cityOptions.parentElement.style.display = "none"; 
+                        appearzip();
+                        showlist();
+                        });
+                    cityOptions.appendChild(li);
+                });
+            })
+            .catch(error => console.log("Error fetching cities:", error));
+        }
+
+        function showlist() {
+            const list = document.querySelectorAll(".dropdown-list");
+            list.forEach(item => {
+                item.style.display = "flex";
+            });
+        }
+
+        // Filter the list based on the search input
+        window.filterList = function (searchBox, listClass) {
+            const filter = searchBox.value.toLowerCase();
+            const list = document.querySelector(`.${listClass} ul`).children;
+            for (let item of list) {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(filter) ? "" : "none";
+            }
+        };
+
+
+        function submitAddressData() {
+            const addressData = {
+                flat: document.getElementById('flat').value,
+                street: document.getElementById('street').value,
+                landmark: document.getElementById('landmark').value,
+                district: document.getElementById('district').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                pin: document.getElementById('pin').value
+            };
+        }
+
+
+        const nextButton = document.querySelector('.hosting-start-btn');
+        nextButton.addEventListener('click', (event) => {
+            //event.preventDefault(); 
+            submitAddressData(); 
+        });
+    </script>
+</body>
+</html>
+

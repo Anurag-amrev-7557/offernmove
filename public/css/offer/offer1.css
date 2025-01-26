@@ -1,0 +1,181 @@
+.magic-pattern { 
+    width: 25rem;
+    height: 30rem;
+    background-size: cover;
+    background-position: 20% center;
+    background-repeat: repeat;
+    border-top-left-radius: 15rem;
+    border-bottom-left-radius: 2rem;
+    border-top-right-radius: 15rem;
+    border-bottom-right-radius: 2rem;
+    margin-right: 4rem;
+    background-image: url("/resources/mag.jpeg");
+    box-shadow: -1rem 0.7rem 2rem rgba(0, 45, 122, 0.2), -0.2rem 0.7rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.offer-container {
+    margin: 1rem 2rem;
+    margin-bottom: 4rem;
+    padding: 2rem 4rem;
+}
+
+.offer-header-container {
+    display: flex;
+    justify-content: space-between;
+
+    .offer-heading {
+        display: flex;
+        flex-direction: column;
+        padding-left: 4rem;
+        margin-top: 2rem;
+        width: 60%;
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 2.3rem;
+            font-weight: 520;
+        }
+
+        h2 {
+            margin: 0;
+            padding: 0;
+            font-size: 3rem;
+            font-weight: 580;
+            color: #115fdc;
+            margin-top: -0.5rem;
+        }
+
+        .offer-heading-para {
+            margin-top: 1rem;
+            font-weight: 500;
+            color: rgba(0,0,0,0.6);
+            text-align: justify;
+            width: 80%;
+        }
+
+        p {
+            margin-top: 5rem;
+            font-weight: 500;
+            color: rgba(0,0,0,0.6);
+            text-align: justify;
+            width: 80%;
+        }
+
+        a {
+            outline: none;
+            padding: 0.8rem 0.5rem;
+            width: 25%;
+            text-align: center;
+            margin-top: 3rem;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25), transparent) #115DFC;
+            border: none;
+            border-radius: 3rem;
+            color: #F3F4F6;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+    }
+}
+  
+
+.services-container {
+    display: flex;
+    padding: 0 7.5rem;
+    margin: 0 2rem;
+    margin-bottom: 4rem;
+    gap: 1rem;
+
+    .service {
+        height: 25rem;
+        width: 50rem;
+        border-radius: 2rem;
+        background: transparent;
+
+        img {
+            position: absolute;
+            top: 87%;
+            left: 17.3%;
+            height: 0;
+            width: 0;
+            border-radius: 2rem;
+        }
+    }
+}
+
+#service1.show-service {
+    animation: moveToLocation1 1s ease forwards;
+}
+
+@keyframes moveToLocation1 {
+    0% {
+        height: 0;
+        width: 0;
+        transform: translate(0, 0);
+        scale: 0;
+    }
+    100% {
+        height: 24.9rem;
+        width: 18.6rem;
+        transform: translate(-115px,83px); 
+        scale: 1;
+    }
+}
+
+#service2.show-service {
+    animation: moveToLocation2 1s ease forwards;
+}
+
+@keyframes moveToLocation2 {
+    0% {
+        height: 0;
+        width: 0;
+        transform: translate(0, 0);
+        scale: 0;
+    }
+    100% {
+        height: 24.9rem;
+        width: 18.6rem;
+        transform: translate(198px,83px); 
+        scale: 1;
+    }
+}
+
+#service3.show-service {
+    animation: moveToLocation3 1s ease forwards;
+}
+
+@keyframes moveToLocation3 {
+    0% {
+        height: 0;
+        width: 0;
+        transform: translate(0, 0);
+        scale: 0;
+    }
+    100% {
+        height: 24.9rem;
+        width: 18.6rem;
+        transform: translate(510px,83px); 
+        scale: 1;
+    }
+}
+
+#service4.show-service {
+    animation: moveToLocation4 1s ease forwards;
+}
+
+@keyframes moveToLocation4 {
+    0% {
+        height: 0;
+        width: 0;
+        transform: translate(0, 0);
+        scale: 0;
+    }
+    100% {
+        height: 24.9rem;
+        width: 18.6rem;
+        transform: translate(820px,83px); 
+        scale: 1;
+    }
+}

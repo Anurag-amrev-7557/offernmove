@@ -1,0 +1,197 @@
+<% layout("/layouts/boilerplate") %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Shipping Services</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .hero-section {
+            height: 30rem;
+            width: 60%; /* Reduce the width from left and right */
+            margin: 0 auto; /* Center the hero image */
+            background: url('/real-estate/images/headmoving.jpeg') no-repeat center center/cover;
+        }
+
+        /* Heading Section on the Left */
+        .heading-section {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 3rem; /* Adjust to bring heading closer to the hero image */
+            padding-left: 90px; /* To align the heading from the left */
+        }
+
+        .heading-section h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin: 0;
+        }
+
+        .info-section {
+            display: flex;
+            margin-top: 0px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 20px;
+            background-color: #f8f8f8;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .info-section .text-content {
+            flex: 1;
+            max-width: 600px;
+            display: flex;
+            margin-left: 70px;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-section .text-content p {
+            font-size: 1.6rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .info-section .image-content {
+            flex: 1;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .info-section .image-content img {
+            width: 100%;
+            max-width: 440px;
+            margin-right: 257px;
+            margin-bottom: 80px;
+        }
+
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 80px;
+            justify-content: center;
+            max-width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .filter-card {
+            width: 300px;
+            height: 450px;
+            background: #ffffff;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .filter-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .filter-card img {
+            width: 300px;
+            height: 330px;
+            margin-bottom: 15px;
+        }
+
+        .filter-card h3 {
+            font-size: 1rem;
+            color: #333;
+            margin: 0 0 10px;
+        }
+
+        .filter-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Button styling */
+        .cta-button {
+            display: flex; /* Enables flexbox */
+            justify-content: center; /* Centers text horizontally */
+            align-items: center; /* Centers text vertically */
+            border-radius: 3rem;
+            border: none;
+            font-size: 0.8rem;
+            color: #F3F4F6;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25), transparent) #115DFC;
+            height: 2.825rem;
+            padding: 0.4rem 2.5rem;
+            cursor: pointer;
+            font-weight: 520;
+            letter-spacing: 0.25px;
+            transition: all 0.3s ease-out;
+            position: relative;
+            margin-top: 20px; /* Adjust top margin as needed */
+            margin-left: 30px;
+            margin-right: 400px;
+        }
+
+        .cta-button:hover {
+            scale: 1.025;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="hero-section"></div>
+
+    <!-- Heading Section Below Hero Image, Aligned Left -->
+    <div class="heading-section">
+        <h2>Home Shipping Services</h2>
+    </div>
+
+    <div class="info-section">
+        <div class="text-content">
+            <p>
+                Seamless Home Shifting Made Easy
+            </p>
+            <p>
+                Discover trusted partners for all your packing, moving, and home shifting needs. Your hassle-free
+                move starts here!
+            </p>
+            <!-- Added Button -->
+            <button class="cta-button">Search</button>
+        </div>
+        <div class="image-content">
+            <img src="/real-estate/images/cent.jpeg" alt="Moving Team">
+        </div>
+    </div>
+
+    <div class="filters">
+        <div class="filter-card">
+            <img src="/real-estate/images/packing2.jpeg" alt="Location">
+            <h3>Furniture Moving</h3>
+            <p>Secure and efficient packing services to ensure your belongings are protected during transit.</p>
+        </div>
+
+        <div class="filter-card">
+            <img src="/real-estate/images/packing.jpeg" alt="Property">
+            <h3>Packing Services</h3>
+            <p>Subine is - Skilled professionals to safely move heavy and delicate furniture items.</p>
+        </div>
+
+        <div class="filter-card">
+            <img src="/real-estate/images/packing3.jpeg" alt="Price Range">
+            <h3>Loading & Unloading</h3>
+            <p>Hassle-free loading and unloading with attention to detail and utmost care.</p>
+        </div>
+
+        <div class="filter-card">
+            <img src="/real-estate/images/packing4.jpeg" alt="Property Type">
+            <h3>Unpacking Services</h3>
+            <p>Reliable transportation solutions tailored to your moving needs, ensuring
+                timely delivery.</p>
+        </div>
+    </div>
+
+</body>
+</html>

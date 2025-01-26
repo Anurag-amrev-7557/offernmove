@@ -1,0 +1,1041 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="listings-overall-container">
+    <div class="map-section">
+        <div id="map"></div>
+    </div>
+    <div class="listing-section">
+        <div class="advanced-search">
+            <div class="location-search">
+                <input id="location-input" type="text" placeholder="Location" />
+                <span class="material-symbols-outlined" id="detect-location-btn">my_location</span>
+            </div>
+            
+            <div class="search-property-type-container">
+                <div class="bhk-container" id="property-type-search">
+                    <div class="menu">
+                        <div class="item">
+                            <a class="link">
+                                <span> Property Type </span>
+                                <!-- <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg> -->
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link" id="apartment" value="Residential"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>Residential</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link" id="rental" value="Rental/Shared"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>Rental/Shared</a>
+                                </div>
+                                <!-- <div class="submenu-item">
+                                    <a href="" class="submenu-link" id="apartment"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                                        Commercial </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-land-plot"><path d="m12 8 6-3-6-3v10"/><path d="m8 11.99-5.5 3.14a1 1 0 0 0 0 1.74l8.5 4.86a2 2 0 0 0 2 0l8.5-4.86a1 1 0 0 0 0-1.74L16 12"/><path d="m6.49 12.85 11.02 6.3"/><path d="M17.51 12.85 6.5 19.15"/></svg>
+                                        Land/Plots </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkle"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+                                        Special Properties </a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu" id="suboptions">
+                        <div class="item">
+                            <a class="link">
+                                <span id="type-text"> Property Subtype </span>
+                                <!-- <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg> -->
+                            </a>
+                            <div class="submenu" id="resident">
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building-2"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>Apartment </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-castle"><path d="M22 20v-9H2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2Z"/><path d="M18 11V4H6v7"/><path d="M15 22v-4a3 3 0 0 0-3-3a3 3 0 0 0-3 3v4"/><path d="M22 11V9"/><path d="M2 11V9"/><path d="M6 4V2"/><path d="M18 4V2"/><path d="M10 4V2"/><path d="M14 4V2"/></svg>Villa </a>
+                                </div>
+                            </div>
+                            <div class="submenu" id="shared">
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link">PG </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link">Co-living Spaces </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link">Hostels </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu">
+                        <div class="item">
+                            <a class="link">
+                                <span> Property Status </span>
+                                <!-- <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg> -->
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-percent"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>For Sale </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> For Rent</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> For Lease </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bhk-container">
+                    
+                    
+
+                    <div class="menu">
+                        <div class="item">
+                            <a class="link">
+                                <span> Bedrooms/Bathrooms </span>
+                                <!-- <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg> -->
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 1 BHK </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 2 BHK </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 3 BHK </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 4 BHK </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 5+ BHK </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="menu">
+                        <div class="item">
+                            <a class="link">
+                                <span> Property Status </span>
+                                <!-- <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg> -->
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> Furnished</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> Unfurnished </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> Semi-Furnished </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu">
+                        <div class="item">
+                            <a class="link">
+                                <span> Pet Friendly </span>
+                                <!-- <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg> -->
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> Pet Friendly</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> Non-Pet Friendly</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="location-range">
+                    <div class="range-text">
+                        <div class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="radius">
+                            <span class="checkmark"></span>
+                        </div>
+                        <label for="radius">Radius<p class="PB-range-slidervalue">50</p>km</label>
+                    </div>
+                    <div class="input-range">
+                        <div class="PB-range-slider-div">
+                            <input type="range" min="0" max="80" value="40" class="PB-range-slider" id="myRange">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="price-range">
+                    <div class="range-slider">
+                        <span>Price Range From</span>
+                        <span class="rangeValues"></span>
+                        <input value="10000" min="1000" max="50000" step="500" type="range">
+                        <input value="400000" min="1000" max="500000" step="500" type="range">
+                    </div>
+                </div>
+                
+                
+                <!-- <div class="features-list-wrap">
+                    <div class="btn-features-list">
+                        <span class="material-symbols-outlined">add_box</span>
+                        <span>More Filters</span>
+                    </div>
+                    <div class="features-list">
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="ac">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="ac">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-air-vent"><path d="M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 8h12"/><path d="M18.3 17.7a2.5 2.5 0 0 1-3.16 3.83 2.53 2.53 0 0 1-1.14-2V12"/><path d="M6.6 15.6A2 2 0 1 0 10 17v-5"/></svg>
+                                Air Conditioning</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="barbeque">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="barbeque">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-barbecue"><path d="M6 4c0-1 2-1 2-2"/><path d="M12 4c0-1 2-1 2-2"/><path d="M18 4c0-1 2-1 2-2"/><path d="M3 8a9.06 9 0 0 0 18 0Z"/><path d="m9.2 15.6-1.3 2.6"/><circle cx="7" cy="20" r="2"/><path d="M9 20h8"/><path d="M14.8 15.6 18 22"/></svg>
+                                Barbeque</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="dryer">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="dryer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hairdryer"><circle cx="8" cy="8" r="2"/><path d="M18 11s-7 3-10 3A6 6 0 0 1 8 2c3 0 10 3 10 3Z"/><path d="m18 5 4-2v10l-4-2"/><path d="m7 13.9.8 5.1c.1.5.6 1 1.2 1h2c.6 0 .9-.4.8-1l-.9-5.5"/><path d="M11.64 18s3.3-2 7.3-2a2 2 0 0 1 0 4H17a2 2 0 0 0-2 2"/></svg>
+                                Dryer</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="gym">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="gym">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dumbbell"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"/></svg>
+                                Gym</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="laundry">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="laundry">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shirt"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+                                Laundry</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="lawn">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="lawn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-fence"><path d="M4 3 2 5v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/><path d="M6 8h4"/><path d="M6 18h4"/><path d="m12 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/><path d="M14 8h4"/><path d="M14 18h4"/><path d="m20 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/></svg>
+                                Lawn</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="microwave">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="microwave">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-microwave"><rect width="20" height="15" x="2" y="4" rx="2"/><rect width="8" height="7" x="6" y="8" rx="1"/><path d="M18 8v7"/><path d="M6 19v2"/><path d="M18 19v2"/></svg>
+                                Microwave</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="shower">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="shower">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shower"><path d="M9 10V8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M7 10h14"/><path d="M3 22V4a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v2"/><path d="M10 14h.01"/><path d="M14 14h.01"/><path d="M18 14h.01"/><path d="M9 18h.01"/><path d="M14 18h.01"/><path d="M19 18h.01"/><path d="M8 22h.01"/><path d="M14 22h.01"/><path d="M20 22h.01"/></svg>
+                                Outdoor Shower</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="fridge">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="fridge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refrigerator-freezer"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M9 6h.01"/><path d="M5 10h14"/><path d="M9 14h.01"/></svg>
+                                Refrigerator</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="furnished">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="furnished">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-armchair"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M5 18v2"/><path d="M19 18v2"/></svg>
+                                Furnished</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="pool">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="pool">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-waves-ladder"><path d="M19 5a2 2 0 0 0-2 2v11"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M7 13h10"/><path d="M7 9h10"/><path d="M9 5a2 2 0 0 0-2 2v11"/></svg>
+                                Swimming Pool</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="tv">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="tv">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tv"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+                                TV Cable</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox"  type="checkbox" id="washer">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="washer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-washing-machine"><path d="M3 6h3"/><path d="M17 6h.01"/><rect width="18" height="20" x="3" y="2" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"/></svg>
+                                Washer</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox" type="checkbox" id="wifi">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="wifi">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
+                                WiFi</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox" type="checkbox" id="window">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="window">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-blinds"><path d="M3 3h18"/><path d="M20 7H8"/><path d="M20 11H8"/><path d="M10 19h10"/><path d="M8 15h12"/><path d="M4 3v14"/><circle cx="4" cy="19" r="2"/></svg>
+                                Windows</label>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox-container">
+                                <input class="custom-checkbox" type="checkbox" id="pet">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="pet">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dog"><path d="M11.25 16.25h1.5L12 17z"/><path d="M16 14v.5"/><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"/><path d="M8 14v.5"/><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"/></svg>
+                                Pet Friendly</label>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <!-- <div class="other-filters-container">
+                <div class="filter1">
+                    <div class="menu">
+                        <div class="item">
+                            <a href="#" class="link" id="cities">
+                                <span> All Cities </span>
+                                <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 1 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 2</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 3 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 4 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 5 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 6 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 7 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 8 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 9 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 10 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> Any </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <div class="item">
+                            <a href="#" class="link" id="areas">
+                                <span> All Areas </span>
+                                <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 1 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 2</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 3 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 4 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 5 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 6 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 7 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 8 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 9 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 10 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> Any </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <div class="item">
+                            <a href="#" class="link" id="status">
+                                <span> Status </span>
+                                <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 1 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 2</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 3 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 4 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 5 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 6 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 7 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 8 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 9 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 10 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> Any </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <div class="item">
+                            <a href="#" class="link" id="property-type">
+                                <span> Type </span>
+                                <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 1 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 2</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 3 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 4 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 5 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 6 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 7 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 8 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 9 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 10 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> Any </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter2">
+                    <div class="menu">
+                        <div class="item">
+                            <a href="#" class="link" id="bedroom">
+                                <span> Bedrooms </span>
+                                <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 1 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 2</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 3 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 4 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 5 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 6 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 7 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 8 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 9 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 10 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> Any </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <div class="item">
+                            <a href="#" class="link" id="bathroom">
+                                <span> Bathrooms </span>
+                                <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 1 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 2</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 3 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 4 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 5 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 6 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 7 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 8 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 9 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> 10 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link"> Any </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="number" placeholder="Min. Area">
+                    <input type="number" placeholder="Max. Area">
+                </div>
+                <div class="filter3">
+                    <input type="number" placeholder="Property ID">
+                </div>
+            </div>
+            <div class="price-range">
+                <div class="range-slider">
+                    <span>Price Range From</span>
+                    <span class="rangeValues"></span>
+                    <input value="1000" min="1000" max="50000" step="500" type="range">
+                    <input value="50000" min="1000" max="50000" step="500" type="range">
+                </div>
+            </div>
+            <div class="features-list-wrap">
+                <div class="btn-features-list">
+                    <span class="material-symbols-outlined">add_box</span>
+                    <span>Other Features</span>
+                </div>
+                <div class="features-list">
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="ac">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="ac">Air Conditioning</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="barbeque">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="barbeque">Barbeque</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="dryer">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="dryer">Dryer</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="gym">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="gym">Gym</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="laundry">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="laundry">Laundry</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="lawn">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="lawn">Lawn</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="microwave">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="microwave">Microwave</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="shower">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="shower">Outdoor Shower</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="fridge">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="fridge">Refrigerator</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="sauna">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="sauna">Sauna</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="pool">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="pool">Swimming Pool</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="tv">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="tv">TV Cable</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox"  type="checkbox" id="washer">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="washer">Washer</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox" type="checkbox" id="wifi">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="wifi">WiFi</label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox" type="checkbox" id="window">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="window">Window Coverings</label>
+                    </div>
+                </div>
+            </div> -->
+            <div class="listing-search-box">
+                <form action="">
+                    <div class="search" type="submit">Search</div>
+                </form>
+            </div>
+        </div>
+        <div class="show-results">
+            <div class="results-found">
+                <span>58</span> Results Found
+            </div>
+            <div class="sort">
+                <!-- <div class="sortby">Sort by:</div>
+                <div class="filter-options">
+                    <div class="menu">
+                        <div class="item">
+                            <a href="" class="link" id="filter">
+                                <span> Featured Listings First </span>
+                                <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 1 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 2</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 3 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 4 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 5 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 6 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 7 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 8 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 9 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> 10 </a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="" class="submenu-link"> Any </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="view">
+                    <div class="view1"><span class="material-symbols-outlined">format_list_bulleted</span></div>
+                    <div class="view2"><span class="material-symbols-outlined"> grid_view </span></div>
+                </div>
+            </div>
+        </div>
+        <div class="listing-view">
+            <div class="card">
+                <img src="/resources/room2.jpg">
+                <div class="card-info">
+                    <div class="price-container">
+                        <div class="price">&#8377;4,500/mo</div>
+                        <div class="sale">For Sale</div>
+                    </div>
+                    <div class="title">Light and Modern Apartment</div>
+                    <div class="location">2436 SW 8th St, Miami, FL 33135, USA</div>
+                    <div class="dimensions">
+                        <div class="bedroom">
+                            <span class="material-symbols-outlined">
+                                bed
+                            </span>
+                            <span class="dimensions-text">4</span>
+                        </div>
+                        <div class="bath">
+                            <span class="material-symbols-outlined">
+                                shower
+                            </span>
+                            <span class="dimensions-text">2</span>
+                        </div>
+                        <div class="parking">
+                            <span class="material-symbols-outlined">
+                                directions_car
+                            </span>
+                            <span class="dimensions-text">1</span>
+                        </div>
+                        <div class="area">
+                            <span class="material-symbols-outlined">
+                                straighten
+                            </span>
+                            <span class="dimensions-text">1200 Sq Ft</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="card">
+                <img src="/resources/room2.jpg">
+                <div class="card-info">
+                    <div class="price-container">
+                        <div class="price">&#8377;4,500/mo</div>
+                        <div class="sale">For Sale</div>
+                    </div>
+                    <div class="title">Light and Modern Apartment</div>
+                    <div class="location">2436 SW 8th St, Miami, FL 33135, USA</div>
+                    <div class="dimensions">
+                        <div class="bedroom">
+                            <span class="material-symbols-outlined">
+                                bed
+                            </span>
+                            <span class="dimensions-text">4</span>
+                        </div>
+                        <div class="bath">
+                            <span class="material-symbols-outlined">
+                                shower
+                            </span>
+                            <span class="dimensions-text">2</span>
+                        </div>
+                        <div class="parking">
+                            <span class="material-symbols-outlined">
+                                directions_car
+                            </span>
+                            <span class="dimensions-text">1</span>
+                        </div>
+                        <div class="area">
+                            <span class="material-symbols-outlined">
+                                straighten
+                            </span>
+                            <span class="dimensions-text">1200 Sq Ft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/resources/room2.jpg">
+                <div class="card-info">
+                    <div class="price-container">
+                        <div class="price">&#8377;4,500/mo</div>
+                        <div class="sale">For Sale</div>
+                    </div>
+                    <div class="title">Light and Modern Apartment</div>
+                    <div class="location">2436 SW 8th St, Miami, FL 33135, USA</div>
+                    <div class="dimensions">
+                        <div class="bedroom">
+                            <span class="material-symbols-outlined">
+                                bed
+                            </span>
+                            <span class="dimensions-text">4</span>
+                        </div>
+                        <div class="bath">
+                            <span class="material-symbols-outlined">
+                                shower
+                            </span>
+                            <span class="dimensions-text">2</span>
+                        </div>
+                        <div class="parking">
+                            <span class="material-symbols-outlined">
+                                directions_car
+                            </span>
+                            <span class="dimensions-text">1</span>
+                        </div>
+                        <div class="area">
+                            <span class="material-symbols-outlined">
+                                straighten
+                            </span>
+                            <span class="dimensions-text">1200 Sq Ft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/resources/room2.jpg">
+                <div class="card-info">
+                    <div class="price-container">
+                        <div class="price">&#8377;4,500/mo</div>
+                        <div class="sale">For Sale</div>
+                    </div>
+                    <div class="title">Light and Modern Apartment</div>
+                    <div class="location">2436 SW 8th St, Miami, FL 33135, USA</div>
+                    <div class="dimensions">
+                        <div class="bedroom">
+                            <span class="material-symbols-outlined">
+                                bed
+                            </span>
+                            <span class="dimensions-text">4</span>
+                        </div>
+                        <div class="bath">
+                            <span class="material-symbols-outlined">
+                                shower
+                            </span>
+                            <span class="dimensions-text">2</span>
+                        </div>
+                        <div class="parking">
+                            <span class="material-symbols-outlined">
+                                directions_car
+                            </span>
+                            <span class="dimensions-text">1</span>
+                        </div>
+                        <div class="area">
+                            <span class="material-symbols-outlined">
+                                straighten
+                            </span>
+                            <span class="dimensions-text">1200 Sq Ft</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

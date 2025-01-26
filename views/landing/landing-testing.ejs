@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="<%= googleClientId %>.apps.googleusercontent.com">
+    <link rel="icon" type="image/png" href="/resources/logo-title.png">
+    <link rel="stylesheet" href="/css/landing-testing.css">
+    <link rel="stylesheet" href="/css/terms.css">
+    <meta name="format-detection" content="telephone=no">
+    <title>OfferNMove – Direction to your home</title>
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.4.0/dist/duet/duet.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.4.0/dist/duet/duet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.4.0/dist/duet/themes/default.css" />
+</head>
+<style>
+    .enquiry-background {
+        background-image: url("/resources/resort.jpg");
+        background-size: cover;
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    div:where(.swal2-container) .swal2-html-container {
+        z-index: 1;
+        justify-content: unset;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        color: inherit;
+        font-size: 1.125em;
+        font-weight: normal;
+        line-height: normal;
+        text-align: unset;
+        word-wrap: normal;
+        word-break: normal;
+    }
+
+    .swal2-popup {
+        margin: 0;
+        padding: 0;
+        border-radius: 1rem;
+    }
+</style>
+<body>
+    <div class="header" aria-hidden="false">
+        <div class="logo-container">
+            <div class="logo">
+              <div class="logo-icon-container">
+                <img src="/resources/nobglogo.jpg" id="logo-icon">
+              </div>
+              <div class="logo-name-container">
+                <img src="/resources/logo.png" id="logo-name">
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="enquiry-background" id="enquiry-form">
+        <div class="enquiry-blur">
+            <div class="enquiry-container">
+                <div class="enquiry">
+                    <div class="part1"
+                    data-aos="zoom-in-right"
+                data-aos-easing="ease"
+                data-aos-delay="130"
+                data-aos-offset="0"
+                data-aos-duration="700" id="first-part">
+                        <h2>01.</h2>
+                        <span>Why Choose OfferNMove?</span>
+                        <p>Your One-Stop Solution for All Home-Related Needs</p>
+                        <div class="slider"></div>
+                    </div>
+                    <div class="part2"
+                    data-aos="zoom-in-right"
+                data-aos-easing="ease"
+                data-aos-delay="130"
+                data-aos-offset="0"
+                data-aos-duration="700" id="second-part">
+                        <h2>03.</h2>
+                        <span>Transform Your Space with Home Interior Services</span>
+                        <p>Create the home of your dreams! Our professional home interior designers deliver stunning, functional, and customized solutions tailored to your style and budget. Whether it's a modern makeover or personalized interiors, we’ve got you covered.</p>
+                        <div class="slider"></div>
+                    </div>
+                </div>
+    
+    
+                <div class="enquiry-form" data-aos="zoom-in"
+                data-aos-easing="ease"
+                data-aos-delay="130"
+                data-aos-offset="0"
+                data-aos-duration="700">
+                    <div class="enquiry-form-heading">
+                        <h3>Real Estate Inquiry Form</h3>
+                        <p>Get the information you need quickly, connect with the right property owners or agents.</p>
+                    </div>
+                    <form class="enquiry-form-main">
+                        <div class="enquiry-type">
+                            <label for="">Inquiry Type</label>
+                            <div class="menu" id="form-type">
+                                <div class="item">
+                                    <a class="link" id="enquiry-type">
+                                        <span> Select </span>
+                                        <svg viewBox="0 0 360 360" xml:space="preserve">
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    id="XMLID_225_"
+                                                    d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                                ></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <div class="submenu">
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" id="purchase" value="purchase" name="purchase"> Purchase a Property </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" id="rent" value="rent" name="rent"> Rent a Property </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" id="interior" value="interior" name="interior"> Home Interior Services </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" id="shifting" value="shifting" name="shifting"> House Shifting Services </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" id="repair" value="repair" name="repair"> Home Repair Services </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p id="type-error" class="form-error"></p>
+                        </div>
+                        <div class="enquiry-info">
+                            <label for="Information">Information</label>
+                            <div class="name">
+                                <div class="first-name-container">
+                                    <input type="text" placeholder="First Name" name="form_first_name" class="firstname">
+                                    <p class="form-error" id="first-name-error"></p>
+                                </div>
+                                <div class="last-name-container">
+                                    <input type="text" placeholder="Last Name" name="form_last_name" class="lastname">
+                                    <p class="form-error" id="last-name-error"></p>
+                                </div>
+                            </div>
+                            <div class="enquiry-email-container">
+                                <div>
+                                    <input type="email" placeholder="Email" name="form_email" class="enquiry-email">
+                                    <p id="email-error" class="form-error"></p>
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="Email Otp" name="form_email_otp" class="enquiry-email-otp">
+                                    <p id="email-otp-error" class="form-error"></p>
+                                </div> 
+                            </div>
+                            <div class="enquiry-phone-container">
+                                <div>
+                                    <input type="text" placeholder="Phone Number" name="form_phone" class="enquiry-phone">
+                                    <p id="phone-error" class="form-error"></p>
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="Phone Otp" name="form_phone_otp" class="enquiry-phone-otp">
+                                    <p id="phone-otp-error" class="form-error"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="enquiry-location">
+                            <div class="dropdown-container">
+                                <div class="dropdown">
+                                  <label for="state-select">State</label>
+                                  <input
+                                    type="text"
+                                    id="state-select"
+                                    class="dropdown-input"
+                                    placeholder="Select a State"
+                                    readonly
+                                  />
+                                  <div class="dropdown-list state-list">
+                                    <input
+                                      type="text"
+                                      class="search-box"
+                                      placeholder="Search State..."
+                                      oninput="filterList(this, 'state-list')"
+                                    />
+                                    <ul id="state-options"></ul>
+                                  </div>
+                                </div>
+                              
+                                <div class="dropdown">
+                                  <label for="city-select">City</label>
+                                  <input
+                                    type="text"
+                                    id="city-select"
+                                    class="dropdown-input"
+                                    placeholder="Select a City"
+                                    readonly
+                                  />
+                                  <div class="dropdown-list city-list">
+                                    <input
+                                      type="text"
+                                      class="search-box"
+                                      placeholder="Search City..."
+                                      oninput="filterList(this, 'city-list')"
+                                    />
+                                    <ul id="city-options"></ul>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="repair-enquiry animate__animated">
+                            <label>Services</label>
+                            <div class="menu" id="repair-input">
+                                <div class="item">
+                                    <a class="link" id="enquiry-repair">
+                                    <span> Select </span>
+                                    <svg viewBox="0 0 360 360" xml:space="preserve">
+                                        <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </a>
+                                    <div class="submenu">
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" name="plumbing"> Plumbing Repairs </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" name="electrical"> Electrical Repairs </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" name="painting"> Painting and Wall Repairs </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" name="roof"> Roof and Ceiling Repairs </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" name="flooring"> Flooring Repairs </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" name="carpentry"> Woodwork and Carpentry Repairs </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" name="ventilation"> Air Conditioning and Ventilation Repairs </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" name="waterproofing"> Waterproofing </a>
+                                        </div>
+                                        <div class="submenu-item"> 
+                                            <a class="submenu-link" name="bathroom"> Bathroom Repairs </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" name="pestcontrol"> Pest Control Services </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" name="window"> Window and Door Repairs </a>
+                                        </div>
+                                        <div class="submenu-item">
+                                            <a class="submenu-link" name="gardening"> Gardening and Landscaping Repairs </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="form-error" id="services-error"></p>
+                        </div>
+                        <div class="enquiry-property animate__animated">
+                            <label for="Property">Property</label>
+                            <div class="price-size">
+                                <div class="price-container">
+                                    <input type="number" placeholder="Max Price">
+                                    <p class="form-error" id="price-error"></p>
+                                </div>
+                                <div class="size-container">
+                                    <input type="number" placeholder="Minimum Size (Sq Ft)">
+                                    <p class="form-error" id="size-error"></p>
+                                </div>
+                            </div>
+                            <div class="bed-bath">
+                                <div class="bhk-container">
+                                    <input type="number" placeholder="Preferred Bhk">
+                                    <p class="form-error" id="bhk-error"></p>
+                                </div>
+                                <div class="area-container">
+                                    <input type="number" placeholder="Area">
+                                    <p class="form-error" id="area-error"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="agreement">
+                            <h3>GDPR Agreement</h3>
+                            <div class="agreement-check">
+                                <label class="checkbox-container">
+                                    <input class="custom-checkbox" type="checkbox" id="agreement">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label for="agreement">By using the website, you accept the <a href="/terms" id="termsconditions">Terms and Conditions</a></label>
+                            </div>
+                            <div id="terms-error" class="form-error"></div>
+                        </div>
+                        <div class="enquiry-submit">
+                            <button>Submit</button>
+                        </div>
+                    </form>
+                </div>
+    
+    
+                <div class="enquiry">
+                    <div class="part2"
+                    data-aos="zoom-in-left"
+                data-aos-easing="ease"
+                data-aos-delay="130"
+                data-aos-offset="0"
+                data-aos-duration="700">
+                        <h2>02.</h2>
+                        <span>Find Homes for Rent or Sale</span>
+                        <p>Looking for a new home? Browse our extensive listings of verified properties for rent or sale. We connect you with trusted agents, property owners, and leading agencies to ensure a smooth and stress-free search. Find and book your ideal home with ease!</p>
+                        <div class="slider"></div>
+                    </div>
+                    <div class="part2"
+                    data-aos="zoom-in-left"
+                data-aos-easing="ease"
+                data-aos-delay="130"
+                data-aos-offset="0"
+                data-aos-duration="700">
+                        <h2>04.</h2>
+                        <span>Hassle-Free Home Shifting Services</span>
+                        <p>Move without the headache! Our reliable home shifting partners provide safe, efficient, and timely relocation services. Whether you’re moving locally or across the city, we ensure a seamless and stress-free moving experience.</p>
+                        <div class="slider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-links-container">
+            <div class="footer-link">
+                <a href="/about-us">About Us</a>
+            </div>
+            <span>|</span>
+            <div class="footer-link">
+                <a href="/terms">Terms & Conditions</a>
+            </div>
+            <span>|</span>
+            <div class="footer-link">
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+            <span>|</span>
+            <div class="footer-link">
+                <a href="/contact-us">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-icon-container">
+            <a href="https://www.linkedin.com/company/offernmove" target="_blank" rel="noopener noreferrer" class="footer-icon" id="linkedin">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/offernmove/" target="_blank" rel="noopener noreferrer" class="footer-icon" id="insta">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@OfferNMove" target="_blank" rel="noopener noreferrer" class="footer-icon" id="youtube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+        <div class="footer-copyright">
+            <span>© 2024 OfferNMove Technologies Solution Pvt. Ltd.</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script src="/models/landing-testing.js"></script>
+</body>
+</html> 
+
+
+

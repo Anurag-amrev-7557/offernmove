@@ -1,0 +1,43 @@
+.policy-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #F3F4F6;
+    padding: 0rem 6rem;
+    margin: 2rem 0;
+}
+
+.policy-heading-container {
+    margin-bottom: 1rem;
+
+    h1 {
+        font-size: 1.55rem;
+        font-weight: 570;
+        color: rgba(0, 0, 0, 0.8);
+        margin: 0.4rem 0;
+    }
+
+    .policy-update {
+        font-size: 0.8rem;
+        font-weight: 550;
+        color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.policy, .policy-content {
+    b {
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 0.8);
+        font-weight: 570;
+    }
+
+    p, li, a {
+        font-size: 0.93rem;
+        margin: 0.5rem 0;
+
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    a {
+        color: #115dfc;
+    }
+}

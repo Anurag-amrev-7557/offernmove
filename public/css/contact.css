@@ -1,0 +1,196 @@
+.contact-container {
+    background-color: #f3f4f6;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 2rem 5rem;
+
+    .contact-form-heading {
+        margin-bottom: 2rem;
+        h2 {
+            font-size: 2rem;
+            font-weight: 550;
+            margin: 0;
+            margin-bottom: 0.8rem;
+            color: rgba(0,0,0,0.8);
+        }
+        h3 {
+            margin: 0;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+        p {
+            margin: 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: rgba(0,0,0,0.5);
+        }
+    }
+
+
+    .contact-form-container {
+
+        .contact-form {
+            textarea {
+                font-family: "Montserrat", sans-serif;
+            }
+
+            
+
+
+            .contact-input-group {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 1rem;
+
+                label {
+                    margin-left: 0.5rem;
+                    margin-bottom: 0.3rem;
+                    font-weight: 500;
+                    color: rgba(0,0,0,0.8);
+                    font-size: 1rem;
+                }
+
+                input {
+                    padding: 0.7rem;
+                    border: 1px solid rgba(0,0,0,0.6);
+                    border-radius: 1rem;
+                    outline: none;
+                }
+
+                textarea {
+                    padding: 0.7rem;
+                    border-radius: 1rem;
+                }
+            }
+
+            #contact-agreement {
+                display: flex;
+                justify-content: start;
+
+                .checkmark {
+                    scale: 0.9;
+                }
+            }
+
+            .contact-submit-button-container {
+                margin-top: 2rem;
+                display: flex;
+            }
+
+            .contact-submit-btn {
+                border: none;
+                cursor: pointer;
+                outline: none;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0.5rem 2rem;
+                border-radius: 1rem;
+                color: #f3f4f6;
+                scale: 1.1;
+                background: linear-gradient(to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25), transparent) #115DFC;
+            }
+        }
+    }
+
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 5rem 0;
+
+    img {
+        filter: invert(1);
+        scale: 0.8;
+        margin-bottom: 2rem;
+    }
+
+    .contact-person {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-left: 8rem;
+        margin-bottom: 4rem;
+
+        .email, .location {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    #follow {
+        font-weight: 500;
+        color: rgba(0,0,0,0.6);
+    }
+}
+
+
+
+.contact-icon-container {
+    display: flex;
+    gap: 2rem;
+    scale: 0.98;
+
+    .footer-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.3rem;
+        height: 1.5rem;
+        width: 1.5rem;
+        background-color: rgb(227, 227, 227);
+        border-radius: 50%;
+        color: rgba(0, 0, 0, 0.8);
+        transition: background-color 0.35s ease, background 0.35s ease;
+
+        i {
+            scale: 1.1;
+        }
+    }
+
+    #linkedin:hover {
+        background-color: #0077B5;
+        color: #F3F4F6;
+    }
+
+    #insta i,  #pinterest i {
+        scale: 1.15;
+    }
+
+    #whatsapp i {
+        scale: 1.45;
+        transform: translateX(0.05rem);
+    }
+
+    #insta:hover {
+        background: linear-gradient(
+            to right,
+            #833ab4,#fd1d1d,#fcb045
+        );
+        color: #F3F4F6;
+    }
+
+    #youtube:hover {
+        background-color: #FF0000;
+        color: #F3F4F6;
+    }
+
+    #pinterest:hover {
+        background-color: #E60023;
+        color: #F3F4F6;
+    }
+
+    #whatsapp:hover {
+        background-color: #25D366;
+        color: #F3F4F6;
+    }
+}
